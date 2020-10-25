@@ -1,15 +1,13 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import { SocialIcon } from 'react-social-icons';
-import Box from '@material-ui/core/Box';
-
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import { SocialIcon } from "react-social-icons";
+import Box from "@material-ui/core/Box";
 
 export default function Footer() {
-    return (
-        // <React.Fragment>
-
+  return (
+   
 
         <div className="Footer"  >
             <Box display="flex" justifyContent="center" >
@@ -25,6 +23,6 @@ export default function Footer() {
             </Box>
             
         </div>
-        // </React.Fragment>
+    
     );
 }
