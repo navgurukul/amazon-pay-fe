@@ -1,29 +1,26 @@
-import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-
-
+import React, { useState } from "react";
+import Button from "@material-ui/core/Button";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     // marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '8%',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "8%",
     boxShadow: "rgba(0, 0, 0, 0.12) 0 0 25px",
-
   },
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', 
+    width: "100%",
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -35,30 +32,25 @@ export default function Form() {
   const classes = useStyles();
 
   const [userDetails, setUserDetails] = useState({
-    firstName: '',
-    name: '',
-    Email: '',
-    Phone:'',
-    Address: '',
-    PanNumber: '',
-    Amount: '',
-   
+    firstName: "",
+    name: "",
+    Email: "",
+    Phone: "",
+    Address: "",
+    PanNumber: "",
+    Amount: "",
   });
-
-
 
   // const handleChange = (event) => {
   //   setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
   // };
 
-
   return (
-    <Container  style={{marginTop:'3%'}} component="main" maxWidth="md" >
+    <Container style={{ marginTop: "3%" }} component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
-       <form className={classes.form} noValidate>
-        <Grid container spacing={4}>
-              
+        <form className={classes.form} noValidate>
+          <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
               <TextField
                 autoComplete="fname"
@@ -83,12 +75,13 @@ export default function Form() {
               />
             </Grid>
             <Grid item xs={12} md={6}>
-            <TextField
+              <TextField
                 variant="outlined"
                 margin="normal"
                 required
                 fullWidth
-                pattern="^\d{4}-\d{3}-\d{4}$" required
+                pattern="^\d{4}-\d{3}-\d{4}$"
+                required
                 name="Phone"
                 label="Phone Number"
                 type="phone"
@@ -134,9 +127,6 @@ export default function Form() {
                 autoFocus
               />
             </Grid>
-          
-          
-           
           </Grid>
           <Button
             type="submit"
@@ -147,10 +137,8 @@ export default function Form() {
           >
             DONATE
           </Button>
-         
         </form>
       </div>
-      
     </Container>
   );
 }
