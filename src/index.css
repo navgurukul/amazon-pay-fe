@@ -1,13 +1,79 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.MuiButton-containedPrimary{
+  background-color:  #f05f40!important;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.MuiList-padding{
+  padding-left: 35% !important;
+}
+.MuiAppBar-colorPrimary{
+  background-color: white !important;
+}
+
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline{
+  border-color: #f05f40 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+a{
+  text-decoration: none !important;
+  color: black !important;
+} 
+
+a:hover {
+  font: normal normal bold 25px/1.4em wfont_fdeab1_d52aacd0101e4a368f7a27b29e6c2824,wf_d52aacd0101e4a368f7a27b29,orig_comfortaa_regular;
+  color: #262671;}
+
+
+.Footer{
+  margin-top: 166px;
+
+}
+
+
+.text1{
+  text-align: left;
+  font: normal normal normal 15px/1.4em 'open sans',sans-serif;
+  color: #7F7F7F;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-top: 30px !important;
+  font-size: 15px !important;
+}
+
+.text2{
+  text-align: left;
+  font: normal normal normal 15px/1.4em 'open sans',sans-serif;
+  color: #7F7F7F;
+  font-size: 15px !important;
+  margin-top: 23px !important;
+  line-height: normal;
+  letter-spacing: normal;
+
+}
+
+.Heading{
+  font: normal normal bold 25px/1.4em wfont_fdeab1_d52aacd0101e4a368f7a27b29e6c2824,wf_d52aacd0101e4a368f7a27b29,orig_comfortaa_regular;
+  color: #262671;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  text-align: start;
+}
+
+.text{
+
+  height: 65px;
+  color: white;
+  font-size: 22px !important;
+  /* background-color: aqua; */
+  padding: 20px;
+}
+
+
+@media (max-width: 480px) {
+  .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    margin-top: 140px !important;
+  }
 }
