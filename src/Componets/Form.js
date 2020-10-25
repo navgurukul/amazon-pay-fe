@@ -95,19 +95,20 @@ export default function Form() {
                 autoComplete="phoneNumber"
               />
             </Grid>
-
             <Grid item xs={12} md={6}>
-              <TextField
-                autoComplete="fname"
-                name="Address"
+            <TextField
                 variant="outlined"
+                margin="normal"
                 required
                 fullWidth
-                id="Address"
-                label="Address"
-                autoFocus
+                name="address"
+                label="address"
+                type="address"
+                autoComplete="address"
               />
             </Grid>
+
+           
 
             <Grid item xs={12} md={6}>
               <TextField

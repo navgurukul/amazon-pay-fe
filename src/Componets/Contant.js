@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import AmazonLogo from './amazon.jpg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,10 +25,11 @@ export default function Text() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={12} style={{ marginTop: '8%' }}>
+        <Grid item xs={12} style={{ marginTop: '7%' }}>
           <Container  maxWidth="md">
-
-         
+            <div className="AmazonLogo">
+          <img src={AmazonLogo}  alt="Logo" style={{height:'70px' , width:'30%'}}  />
+          </div>
             <Typography component="h4" variant="h4" className="Heading">
             Support us on 300 tablet distribution for our kids
 

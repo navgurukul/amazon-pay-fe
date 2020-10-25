@@ -22,9 +22,9 @@ a{
 } 
 
 a:hover {
-  font: normal normal bold 25px/1.4em wfont_fdeab1_d52aacd0101e4a368f7a27b29e6c2824,wf_d52aacd0101e4a368f7a27b29,orig_comfortaa_regular;
-  color: #262671;}
-
+ 
+  color: #f05f40 !important;
+} 
 
 .Footer{
   margin-top: 166px;
@@ -56,10 +56,11 @@ a:hover {
 .Heading{
   font: normal normal bold 25px/1.4em wfont_fdeab1_d52aacd0101e4a368f7a27b29e6c2824,wf_d52aacd0101e4a368f7a27b29,orig_comfortaa_regular;
   color: #262671;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Karla', sans-serif !important;
   line-height: normal !important;
   letter-spacing: normal !important;
   text-align: start;
+  margin-top: 10px!important;
 }
 
 .text{
@@ -69,6 +70,18 @@ a:hover {
   font-size: 22px !important;
   /* background-color: aqua; */
   padding: 20px;
+}
+
+
+body{
+  overflow-x: hidden !important; 
+  background-color: #FFFFFF !important;
+}
+
+.AmazonLogo{
+  /* height:75px; */
+  text-align: start !important;
+
 }
 
 
