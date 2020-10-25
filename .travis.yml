@@ -1,0 +1,21 @@
+language: node_js
+os: linux
+dist: bionic
+node_js:
+  14
+before_script:
+  - npm install
+env:
+  global:
+    secure: lIVRVwAj906JDuOGL8ZCEt9io8I/vd4B649V4+B60wWfV5jKU7LaZmGCpWpBNp69Gp6/KXJjPF6cF85EeNLc4GmBW8i3ZOx1/X+eH1yTQn00QAj07TLLD9DZydWdR8DLYCeRZzUVo+QAB7e47wQtLkHW/2nRHuzsaBqGuOnGNi1HPKblVMspjicPiCgOgdvIjRoNtAyn0urHxLgwhnOXHbsMzGbVuKKQD+oJhQAoGf4kjH41ZhRPK1mSEyOoMjZ1TbaC6UjucE7q+QTGsibjNnnogAQ5p44HFTy/fa57Fs92duattcaz6Xl4BN6k7u2GE9xBhs39PsyJacih6LEz0nNzHLJEQqWC3IeZBsqbhOrpqDjcU74kJk4o2i9RhB6FykAN07Fw+H++E8ZwsPOYFNSepvvTsGGZOo26bhQqkTTB5OhENSQg9rWHZxHA6/EJDKBTdgi7dH8ZKFrnfR5KLyP/oKSp6BKzCTcp0I6VBK25P8vi1YJVInj8k5wkVuFOMnCFZfDaFCL1QDXPGyjfYM/LBG7a0E9KGzcfLLDKdjBXa7QeSOWZRq4F6hMBJSEQZo02kQctt06KYhnD5EICkPvi1Es1ixkuVSth+s28bRllrn1Y9WdN2rtr4BBTGQbjFLspd5cAMKtMZJOH9iNTCYnB5eY1apRB/CenC3QW0OI=
+script: npm run build
+deploy:
+  - provider: pages
+    cleanup: false
+    keep_history: true
+    strategy: git
+    target_branch: gh-pages
+    local_dir: build
+    on:
+      branch: master
+    edge: true
