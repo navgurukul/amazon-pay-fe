@@ -45,11 +45,9 @@ export default function Form() {
    
   });
 
-
-
-  // const handleChange = (event) => {
-  //   setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
-  // };
+// const handleChange = (event) => {
+//     setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
+//   };
 
 
   return (
