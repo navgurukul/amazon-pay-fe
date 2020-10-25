@@ -17,6 +17,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "gh-pages-deploy": {
+    "staticpath": "build",
+    "cname": "donate.navgurukul.org",
+    "prep": [
+      "build"
+    ],
+    "post": [],
+    "noprompt": true
+  },  
   "eslintConfig": {
     "extends": "react-app"
   },
