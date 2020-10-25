@@ -41,29 +41,28 @@ export default function Form() {
     Amount: "",
   });
 
-// const handleChange = (event) => {
-//     setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
-//   };
-
+  // const handleChange = (event) => {
+  //     setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
+  //   };
   return (
     <Container style={{ marginTop: "3%" }} component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate autoComplete="off">
           <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <TextField
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
-                required
+                requiredmd={6}
                 fullWidth
                 id="firstName"
                 label="Full Name"
-                autoFocus
+                // autoFocus
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <TextField
                 variant="outlined"
                 required
@@ -74,7 +73,7 @@ export default function Form() {
                 autoComplete="lname"
               />
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -88,22 +87,20 @@ export default function Form() {
                 autoComplete="phoneNumber"
               />
             </Grid>
-            <Grid item xs={12} md={6}>
-            <TextField
+            <Grid item xs={12} md={6} lg={6}>
+              <TextField
                 variant="outlined"
                 margin="normal"
                 required
                 fullWidth
                 name="address"
-                label="address"
+                label="Address"
                 type="address"
                 autoComplete="address"
               />
             </Grid>
 
-           
-
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <TextField
                 autoComplete="fname"
                 name="PanNumber"
@@ -112,11 +109,11 @@ export default function Form() {
                 fullWidth
                 id="PanNumber"
                 label="Pan Number"
-                autoFocus
+                // autoFocus
               />
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <TextField
                 autoComplete="fname"
                 name="Amount"
@@ -125,7 +122,7 @@ export default function Form() {
                 fullWidth
                 id="Amount"
                 label="Amount"
-                autoFocus
+                // autoFocus
               />
             </Grid>
           </Grid>
