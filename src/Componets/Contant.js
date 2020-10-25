@@ -27,8 +27,8 @@ export default function Text() {
       <Grid container spacing={3}>
         <Grid item xs={12} style={{ marginTop: '7%' }}>
           <Container  maxWidth="md">
-            <div className="AmazonLogo">
-          <img src={AmazonLogo}  alt="Logo" style={{height:'70px' , width:'30%'}}  />
+          <div className="AmazonLogo">
+          <img src={AmazonLogo}  alt="Logo"     className="Amazon-icon"   />
           </div>
             <Typography component="h4" variant="h4" className="Heading">
             Support us on 300 tablet distribution for our kids

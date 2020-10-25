@@ -27,9 +27,9 @@ export default function Header() {
             <div
             > 
               <a href="#"><Button color="inherit">Home</Button></a> 
-              <a href="https://navgurukul.org/"> <Button color="inherit">About Us</Button></a>
-              <a href="https://medium.com/navgurukul"> <Button color="inherit">BLOG</Button></a>
-              <a href="https://merakilearn.org/"> <Button color="inherit">MERAKI</Button></a>
+              <a href="https://navgurukul.org/"  target="_blank"> <Button color="inherit">About Us</Button></a>
+              <a href="https://medium.com/navgurukul" target="_blank"> <Button color="inherit">BLOG</Button></a>
+              <a href="https://merakilearn.org/" target="_blank"> <Button color="inherit">MERAKI</Button></a>
               <a href="#"><Button color="inherit">Contact Us</Button></a>
             </div>
           </Grid>

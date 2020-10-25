@@ -11,8 +11,8 @@ export default function Footer() {
         // <React.Fragment>
 
 
-        <div className="Footer">
-            <Box display="flex" justifyContent="center" bgcolor="background.paper" >
+        <div className="Footer"  >
+            <Box display="flex" justifyContent="center" >
                 <Box p={2} >
                     <SocialIcon url="https://x.facebook.com/navgurukul/" />
                 </Box>
@@ -23,13 +23,7 @@ export default function Footer() {
                     <SocialIcon url="https://www.youtube.com/channel/UC9yaihhuBLgke9O6IVC-Gsw" />
                 </Box>
             </Box>
-            <div style={{ backgroundColor: '#343a40' }}>
-                <Container >
-                    <Typography component="p" variant="p" className="text">
-                        Made with love from NavGurukul
-                 </Typography>
-                </Container>
-            </div>
+            
         </div>
         // </React.Fragment>
     );

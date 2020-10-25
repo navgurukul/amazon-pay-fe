@@ -28,6 +28,7 @@ a:hover {
 
 .Footer{
   margin-top: 166px;
+  background-color:whitesmoke !important;
 
 }
 
@@ -84,9 +85,28 @@ body{
 
 }
 
+.Amazon-icon{
+  height:70px;
+  width:30%;
+  margin-left: 18px;
+}
+
 
 @media (max-width: 480px) {
   .MuiGrid-spacing-xs-3 > .MuiGrid-item {
     margin-top: 140px !important;
+  }
+
+  .Amazon-icon{
+    height: 76px;
+    width: 83%;
+    margin-left: -18px;
+    background-color: tomato !important;
+  }
+
+  .Footer{
+    margin-top: 10px;
+
+
   }
 }
