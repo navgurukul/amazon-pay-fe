@@ -1,9 +1,8 @@
 const LOGO = "https://navgurukul.org/assets/img/logo.png";
 const HOME_PAGE = "https://navgurukul.org/";
 const BLOG = "https://medium.com/navgurukul";
-const TEXT1 = `The COVID 19 pandemic has hit the poor disproportionately hard; beyond loss of livelihoods, the associated school closures that have gone on for many months, with immense learning losses for their children.`;
-const TEXT2 = `And so, as soon as the lockdown began, our teachers swung to action, under the Reach & Teach Task Force. We reimagined how to continue learning to our students virtually. We reached out to our
-students through their parents’ phones and widely available low tech solutions like WhatsApp. We partnered with parents to support the child. We curated and created exciting, attractive and relevant material.`;
-const TEXTHEAD = `Support us on 300 tablet distribution for our kids`;
+const TEXT1 = `More than 100+ students have been placed into various MNCs and startups as Software Programmers.`;
+const TEXT2 = `You can donate heartily to this campaign to support employment of girls from marginalised areas across the country.`;
+const TEXTHEAD = `Help girls from Low-Income Communities to become Software Engineers and uplift more women`;
 
 module.exports = { LOGO, HOME_PAGE, BLOG, TEXT1, TEXT2, TEXTHEAD };
