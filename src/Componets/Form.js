@@ -5,8 +5,8 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import { useForm } from 'react-hook-form'
-import axios from 'axios'
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -31,10 +31,7 @@ export default function Form() {
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm();
 
-
   // console.log(errors);
-
-
 
   const [userDetails, setUserDetails] = useState({
     FullName: "",
@@ -49,41 +46,38 @@ export default function Form() {
     setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
   };
 
-
-  const onSubmit = data => {
-
-    let min_num = 1;
-    let max_num = 100;
-    let min = Math.ceil(min_num);
-    let max = Math.floor(max_num);
-
-    const sellerOrderId = Math.floor(Math.random() * (max - min + 1)) + min;
-    const INR = "INR"
-
+  const onSubmit = () => {
+    let random = new Date().toISOString();
+    random = random.replace(/-/g, "");
+    random = random.replace(/:/g, "");
+    random = random.replace(/\./g, "");
+    random = random.replace(/[A-Z]/g, "");
+    const sellerOrderId = random;
+    const INR = "INR";
     axios
-      .get(`https://donate.navgurukul.org/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`)
-      .then(res => {
-        console.log(res.data, 'response')
-        window.open(res.data)
+      .get(
+        `https://donate.navgurukul.org/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
+      )
+      .then((res) => {
+        console.log(res.data, "response");
+        window.open(res.data);
       })
 
-      .catch(err => {
-        console.log(err, "error")
-      })
-
-
+      .catch((err) => {
+        console.log(err, "error");
+      });
   };
-
-  // console.log(userDetails, 'kkkkk')
-
 
   return (
     <Container style={{ marginTop: "3%" }} component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
-        <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className={classes.form}
+          noValidate
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <Grid container spacing={4}>
-
             <Grid item xs={12} md={6}>
               <TextField
                 autoComplete="fname"
@@ -97,12 +91,10 @@ export default function Form() {
                 defaultValue={userDetails.FullName}
                 onChange={handleChange}
                 inputRef={register({ required: true, maxLength: 80 })}
-
               />
-              <div style={{ color: 'red' }}>
+              <div style={{ color: "red" }}>
                 {errors.FullName && <p>This field is required</p>}
               </div>
-
             </Grid>
 
             <Grid item xs={12} md={6}>
@@ -116,11 +108,13 @@ export default function Form() {
                 autoComplete="lname"
                 defaultValue={userDetails.FullName}
                 onChange={handleChange}
-                inputRef={register({ required: true, pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/i })}
-
+                inputRef={register({
+                  required: true,
+                  pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/i,
+                })}
               />
-              <div style={{ color: 'red' }}>
-                {errors.Email && 'Invalid email address'}
+              <div style={{ color: "red" }}>
+                {errors.Email && "Invalid email address"}
               </div>
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
@@ -138,10 +132,9 @@ export default function Form() {
                 defaultValue={userDetails.FullName}
                 onChange={handleChange}
                 // inputRef={register({ trnsformValue: (value) => parseFloat(value)})}
-                inputRef={register({ valueAsNumber: true, required: true, })}
-
+                inputRef={register({ valueAsNumber: true, required: true })}
               />
-              <div style={{ color: 'red' }}>
+              <div style={{ color: "red" }}>
                 {errors.Phone && <p>Character should be Number</p>}
               </div>
             </Grid>
@@ -159,12 +152,10 @@ export default function Form() {
                 onChange={handleChange}
                 inputRef={register({ required: true, maxLength: 80 })}
               />
-              <div style={{ color: 'red' }}>
+              <div style={{ color: "red" }}>
                 {errors.address && <p>This field is required</p>}
               </div>
             </Grid>
-
-
 
             <Grid item xs={12} md={6}>
               <TextField
@@ -179,12 +170,15 @@ export default function Form() {
                 defaultValue={userDetails.PanNumber}
                 onChange={handleChange}
                 type="number"
-                inputRef={register({ required: true, minLength: 6, maxLength: 12 })}
+                inputRef={register({
+                  required: true,
+                  minLength: 6,
+                  maxLength: 12,
+                })}
               />
-              <div style={{ color: 'red' }}>
+              <div style={{ color: "red" }}>
                 {errors.PanNumber && <p>Character should be Number</p>}
               </div>
-
             </Grid>
 
             <Grid item xs={12} md={6} lg={6}>
@@ -200,14 +194,17 @@ export default function Form() {
                 defaultValue={userDetails.Amount}
                 onChange={handleChange}
                 type="number"
-                inputRef={register({ required: true, minLength: 2, maxLength: 12 })}
+                inputRef={register({
+                  required: true,
+                  minLength: 2,
+                  maxLength: 12,
+                })}
               />
 
-              <div style={{ color: 'red' }}>
+              <div style={{ color: "red" }}>
                 {errors.Amount && <p>Character should be amount number</p>}
               </div>
             </Grid>
-
           </Grid>
           <Button
             type="submit"
