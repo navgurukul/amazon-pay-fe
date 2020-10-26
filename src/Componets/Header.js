@@ -24,7 +24,7 @@ export default function Header() {
                   </Button>
                 </a>
               </Grid>
-              <Grid item>
+              {/* <Grid item>
                 <div>
                   <a href="#">
                     <Button color="inherit">Home</Button>
@@ -41,7 +41,7 @@ export default function Header() {
                     <Button color="inherit">Contact Us</Button>
                   </a>
                 </div>
-              </Grid>
+              </Grid> */}
             </Grid>
           </Toolbar>
         </Container>

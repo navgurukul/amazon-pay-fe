@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="Footer">
       <Box display="flex" justifyContent="center">
-        <Box p={2}>
+        {/* <Box p={2}>
           <SocialIcon url="#" />
         </Box>
         <Box p={2}>
@@ -14,7 +14,7 @@ export default function Footer() {
         </Box>
         <Box p={2}>
           <SocialIcon url="#" />
-        </Box>
+        </Box> */}
       </Box>
     </div>
   );

@@ -60,7 +60,7 @@ export default function Form() {
       )
       .then((res) => {
         console.log(res.data, "response");
-        window.open(res.data);
+        window.location.assign(res.data);
       })
       .catch((err) => {
         console.log(err, "error");
@@ -168,11 +168,11 @@ export default function Form() {
                 autoFocus
                 defaultValue={userDetails.PanNumber}
                 onChange={handleChange}
-                type="number"
+                type="text"
                 inputRef={register({
                   required: true,
                   minLength: 6,
-                  maxLength: 12,
+                  maxLength: 10,
                 })}
               />
               <div style={{ color: "red" }}>
@@ -195,7 +195,7 @@ export default function Form() {
                 type="number"
                 inputRef={register({
                   required: true,
-                  minLength: 2,
+                  minLength: 1,
                   maxLength: 12,
                 })}
               />
