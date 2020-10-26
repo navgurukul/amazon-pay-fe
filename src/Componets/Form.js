@@ -56,7 +56,7 @@ export default function Form() {
     const INR = "INR";
     axios
       .get(
-        `https://donate.navgurukul.org/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
+        `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
       )
       .then((res) => {
         console.log(res.data, "response");

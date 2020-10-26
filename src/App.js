@@ -15,7 +15,7 @@ function App() {
     if (currentURL.includes("SUCCESS")) {
       const URLParams = currentURL.split("?")[1];
       axios
-        .get(`https://donate.navgurukul.org/api/verifySignature?${URLParams}`)
+        .get(`/api/verifySignature?${URLParams}`)
         .then((res) => {
           console.log(res.data);
           setIsSuccess(true);
