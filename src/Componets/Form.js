@@ -86,7 +86,7 @@ export default function Form() {
                 autoComplete="fname"
                 name="FullName"
                 variant="outlined"
-                required
+                requiredmd={6}
                 fullWidth
                 id="FullName"
                 label="Full Name"
@@ -120,7 +120,7 @@ export default function Form() {
                 {errors.Email && 'Invalid email address'}
               </div>
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -149,7 +149,7 @@ export default function Form() {
                 required
                 fullWidth
                 name="address"
-                label="address"
+                label="Address"
                 type="address"
                 autoComplete="address"
                 defaultValue={userDetails.address}
@@ -184,7 +184,7 @@ export default function Form() {
 
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} lg={6}>
               <TextField
                 autoComplete="fname"
                 name="Amount"
