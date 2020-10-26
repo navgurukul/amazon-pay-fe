@@ -173,10 +173,11 @@ export default function Form() {
                   required: true,
                   minLength: 6,
                   maxLength: 10,
+                  pattern: /[A-Z]{5}[0-9]{4}[A-Z]{1}/g,
                 })}
               />
               <div style={{ color: "red" }}>
-                {errors.PanNumber && <p>Character should be Number</p>}
+                {errors.PanNumber && <p>Incorrect PAN Details</p>}
               </div>
             </Grid>
 
@@ -212,7 +213,7 @@ export default function Form() {
             color="primary"
             className={classes.submit}
           >
-            DONATE
+            DONATE WITH AMAZON PAY
           </Button>
         </form>
       </div>
