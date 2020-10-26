@@ -4,6 +4,8 @@ git checkout gh-pages
 
 git reset --hard origin/main
 
+cp src/Config/navgurukul.js src/Config/config.js
+
 npm run build
 
 cp -r build/* .
