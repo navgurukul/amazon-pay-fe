@@ -7,7 +7,12 @@ import Footer from "./Componets/Footer";
 import Thanks from "./Componets/Thanks";
 
 function App() {
-  let toDisplay = <Content />;
+  let toDisplay = (
+    <React.Fragment>
+      <Content />
+      <Form />
+    </React.Fragment>
+  );
   if (window.location.href.includes("SUCCESS")) {
     toDisplay = <Thanks />;
   }
@@ -15,7 +20,6 @@ function App() {
     <div className="App">
       <Header />
       {toDisplay}
-      <Form />
       <Footer />
     </div>
   );
