@@ -92,6 +92,12 @@ body{
 }
 
 
+.navItem{
+  
+  margin-top: 10px !important;
+}
+
+
 @media (max-width: 480px) {
   .MuiGrid-spacing-xs-3 > .MuiGrid-item {
     margin-top: 140px !important;

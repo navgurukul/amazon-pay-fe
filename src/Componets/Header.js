@@ -24,7 +24,7 @@ export default function Header() {
           </a>
           </Grid>
           <Grid item>
-            <div
+            <div className="navItem"
             > 
               <a href="#"><Button color="inherit">Home</Button></a> 
               <a href="https://navgurukul.org/"  target="_blank"> <Button color="inherit">About Us</Button></a>
