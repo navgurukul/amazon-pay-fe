@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "8%",
     boxShadow: "rgba(0, 0, 0, 0.12) 0 0 25px",
   },
- 
+
   form: {
     width: "100%",
     marginTop: theme.spacing(3),
@@ -50,18 +50,21 @@ export default function Form() {
   };
 
 
-
-
-
   const onSubmit = data => {
-    console.log("eeeeeeee")
-    const sellerOrderId = "99999";
+
+    let min_num = 1;
+    let max_num = 100;
+    let min = Math.ceil(min_num);
+    let max = Math.floor(max_num);
+
+    const sellerOrderId = Math.floor(Math.random() * (max - min + 1)) + min;
     const INR = "INR"
-    
+
     axios
-      .get(`https://donate.navgurukul.org/api?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`)
+      .get(`https://donate.navgurukul.org/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`)
       .then(res => {
-        console.log(res, 'response')
+        console.log(res.data, 'response')
+        window.open(res.data)
       })
 
       .catch(err => {
@@ -71,7 +74,7 @@ export default function Form() {
 
   };
 
-  // console.log(userDetails, 'kkkkkkkkkkk')
+  // console.log(userDetails, 'kkkkk')
 
 
   return (
@@ -80,8 +83,8 @@ export default function Form() {
       <div className={classes.paper}>
         <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={4}>
-            
-          <Grid item xs={12} md={6}>
+
+            <Grid item xs={12} md={6}>
               <TextField
                 autoComplete="fname"
                 name="FullName"
@@ -135,7 +138,7 @@ export default function Form() {
                 defaultValue={userDetails.FullName}
                 onChange={handleChange}
                 // inputRef={register({ trnsformValue: (value) => parseFloat(value)})}
-                inputRef={register({ valueAsNumber: true, required: true,})}
+                inputRef={register({ valueAsNumber: true, required: true, })}
 
               />
               <div style={{ color: 'red' }}>
@@ -204,7 +207,7 @@ export default function Form() {
                 {errors.Amount && <p>Character should be amount number</p>}
               </div>
             </Grid>
-            
+
           </Grid>
           <Button
             type="submit"

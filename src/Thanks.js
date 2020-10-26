@@ -4,7 +4,7 @@ import Success from './succuss.jpeg'
 export default function Thanks() {
     return (
         <div>
-              <img src={Success}  alt="Logo" />
+            <img src={Success}  alt="Logo" />
         </div>
     )
 }
