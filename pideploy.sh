@@ -4,7 +4,7 @@ git checkout gh-pages-pi
 
 git reset --hard origin/main
 
-cp src/Config/peepulindia.js src/Config/config.js
+cp src/Config/peepulIndia.js src/Config/config.js
 
 npm run build
 
