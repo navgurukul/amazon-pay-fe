@@ -62,7 +62,6 @@ export default function Form() {
         console.log(res.data, "response");
         window.open(res.data);
       })
-
       .catch((err) => {
         console.log(err, "error");
       });

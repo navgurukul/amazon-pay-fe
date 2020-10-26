@@ -7,13 +7,13 @@ export default function Footer() {
     <div className="Footer">
       <Box display="flex" justifyContent="center">
         <Box p={2}>
-          <SocialIcon url="https://x.facebook.com/navgurukul/" />
+          <SocialIcon url="#" />
         </Box>
         <Box p={2}>
-          <SocialIcon url="https://www.instagram.com/navgurukul.bangalore/?hl" />
+          <SocialIcon url="#" />
         </Box>
         <Box p={2}>
-          <SocialIcon url="https://www.youtube.com/channel/UC9yaihhuBLgke9O6IVC-Gsw" />
+          <SocialIcon url="#" />
         </Box>
       </Box>
     </div>
