@@ -1,4 +1,4 @@
-const LOGO = "./logo-pi.png";
+const LOGO = "https://navgurukul.org/assets/img/peepul.png";
 const HOME_PAGE = "https://www.peepulindia.org/";
 const BLOG = "https://twitter.com/peepulindia?lang=en";
 const TEXT1 = `At Peepul, we look to improve learning outcomes in the public education system, by enabling ‘meaningful teacher-student interaction’. If a child is meaningfully and effectively engaged in the classroom by the teacher, she attends classes regularly, engages in learning, and in turn, achieves learning.`;

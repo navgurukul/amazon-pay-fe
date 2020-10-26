@@ -17,7 +17,7 @@ export default function Header() {
                 <a href="#">
                   <Button color="inherit">
                     <img
-                      src={require(`${Config.LOGO}`)}
+                      src={Config.LOGO}
                       alt="Logo"
                       style={{ height: "40px" }}
                     />

@@ -1,4 +1,4 @@
-const LOGO = "./logo.png";
+const LOGO = "https://navgurukul.org/assets/img/logo.png";
 const HOME_PAGE = "https://navgurukul.org/";
 const BLOG = "https://medium.com/navgurukul";
 const TEXT1 = `The COVID 19 pandemic has hit the poor disproportionately hard; beyond loss of livelihoods, the associated school closures that have gone on for many months, with immense learning losses for their children.`;
