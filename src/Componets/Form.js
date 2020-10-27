@@ -10,9 +10,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
-
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import Config from "../Config/config";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -24,8 +24,6 @@ const useStyles = makeStyles((theme) => ({
     padding: "8%",
     boxShadow: "rgba(0, 0, 0, 0.12) 0 0 25px",
   },
-
-  
 
   form: {
     width: "100%",
@@ -48,7 +46,7 @@ export default function Form() {
     Phone: "",
     address: "",
     PanNumber: "",
-    Amount: "",
+    Amount: 999,
     country: "India",
   });
 
@@ -64,9 +62,10 @@ export default function Form() {
     random = random.replace(/[A-Z]/g, "");
     const sellerOrderId = random;
     const INR = "INR";
+    console.log(userDetails.Amount);
     axios
       .get(
-        `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
+        `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900&isSandbox=true`
       )
       .then((res) => {
         console.log(res.data, "response");
@@ -76,6 +75,45 @@ export default function Form() {
         console.log(err, "error");
       });
   };
+
+  let COUNTRY_FIELD = (
+    <Grid container spacing={4}>
+      <Grid item xs={12} md={12} lg={12}>
+        <FormControl
+          variant="outlined"
+          style={{ width: "100%", textAlign: "left" }}
+        >
+          <InputLabel>Country</InputLabel>
+          <Select
+            autoComplete="country"
+            id="country"
+            autoFocus
+            name="country"
+            variant="outlined"
+            fullWidth
+            label="Country"
+            defaultValue={userDetails.country}
+            onChange={handleChange}
+            inputRef={register({ required: true })}
+          >
+            <MenuItem value="" disabled>
+              Select Country
+            </MenuItem>
+            <MenuItem value="India">India</MenuItem>
+            <MenuItem value="Other">Other</MenuItem>
+          </Select>
+        </FormControl>
+
+        <div style={{ color: "red" }}>
+          {errors.FullName && <p>This field is required</p>}
+        </div>
+      </Grid>
+    </Grid>
+  );
+
+  if (Config.NAME === "Peepul") {
+    COUNTRY_FIELD = null;
+  }
 
   let FORM = (
     <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
@@ -89,7 +127,6 @@ export default function Form() {
             fullWidth
             id="FullName"
             label="Full Name"
-            autoFocus
             defaultValue={userDetails.FullName}
             onChange={handleChange}
             inputRef={register({ required: true, maxLength: 80 })}
@@ -168,7 +205,6 @@ export default function Form() {
             fullWidth
             id="PanNumber"
             label="Pan Number"
-            autoFocus
             defaultValue={userDetails.PanNumber}
             onChange={handleChange}
             type="text"
@@ -230,37 +266,8 @@ export default function Form() {
   return (
     <Container style={{ marginTop: "3%" }} component="main" maxWidth="md">
       <CssBaseline />
-      <div className={classes.paperva}>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={12} lg={12}>
-            <FormControl variant="outlined" style={{width:'100%' ,textAlign:'left'}}>
-              <InputLabel>Country</InputLabel>
-              <Select
-                autoComplete="country"
-                id="country"
-                autoFocus
-                name="country"
-                variant="outlined"
-                fullWidth
-                // style={{   textAlign:"left"}}
-                label="Select Country"
-                defaultValue={userDetails.country}
-                onChange={handleChange}
-                inputRef={register({ required: true })}
-              >
-                <MenuItem value="" disabled >
-                  Select Country
-                </MenuItem>
-                <MenuItem value="India">India</MenuItem>
-                <MenuItem value="Other">Other</MenuItem>
-              </Select>
-            </FormControl>
-
-            <div style={{ color: "red" }}>
-              {errors.FullName && <p>This field is required</p>}
-            </div>
-          </Grid>
-        </Grid>
+      <div>
+        {COUNTRY_FIELD}
         {FORM}
       </div>
     </Container>
