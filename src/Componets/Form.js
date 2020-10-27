@@ -18,11 +18,14 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     // marginTop: theme.spacing(8),
     display: "flex",
+    // backgroundColor:'red',
     flexDirection: "column",
     alignItems: "center",
     padding: "8%",
     boxShadow: "rgba(0, 0, 0, 0.12) 0 0 25px",
   },
+
+  
 
   form: {
     width: "100%",
@@ -227,10 +230,10 @@ export default function Form() {
   return (
     <Container style={{ marginTop: "3%" }} component="main" maxWidth="md">
       <CssBaseline />
-      <div className={classes.paper}>
+      <div className={classes.paperva}>
         <Grid container spacing={4}>
           <Grid item xs={12} md={12} lg={12}>
-            <FormControl variant="outlined">
+            <FormControl variant="outlined" style={{width:'100%' ,textAlign:'left'}}>
               <InputLabel>Country</InputLabel>
               <Select
                 autoComplete="country"
@@ -238,13 +241,14 @@ export default function Form() {
                 autoFocus
                 name="country"
                 variant="outlined"
-                style={{ width: "100%" }}
+                fullWidth
+                // style={{   textAlign:"left"}}
                 label="Select Country"
                 defaultValue={userDetails.country}
                 onChange={handleChange}
                 inputRef={register({ required: true })}
               >
-                <MenuItem value="" disabled>
+                <MenuItem value="" disabled >
                   Select Country
                 </MenuItem>
                 <MenuItem value="India">India</MenuItem>

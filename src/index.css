@@ -79,6 +79,13 @@ body{
   background-color: #FFFFFF !important;
 }
 
+
+.MuiList-padding{
+  padding-left: 0!important;
+  height: auto;
+
+}
+
 .AmazonLogo{
   /* height:75px; */
   text-align: start !important;
@@ -93,8 +100,12 @@ body{
 
 
 .navItem{
-  
   margin-top: 10px !important;
+}
+
+
+.MuiMenu-paper {
+  top: 460px!important;
 }
 
 
@@ -112,7 +123,11 @@ body{
 
   .Footer{
     margin-top: 10px;
+  }
 
+
+  .MuiMenu-paper{
+    top: 220px!important;
 
   }
 }
