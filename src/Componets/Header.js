@@ -14,7 +14,7 @@ export default function Header() {
           <Toolbar>
             <Grid justify="space-between" container>
               <Grid item>
-                <a href="#">
+                <a href={Config.RETURN_URL}>
                   <Button color="inherit">
                     <img
                       src={Config.LOGO}
