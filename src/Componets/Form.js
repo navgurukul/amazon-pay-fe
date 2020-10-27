@@ -242,7 +242,7 @@ export default function Form() {
       </Button>
     </form>
   );
-  if (userDetails.country.toLowerCase() !== "india")
+  if (userDetails.country.toLowerCase().trim() !== "india")
     FORM = (
       <div style={{ padding: "15px" }}>
         <Typography>
