@@ -3,8 +3,14 @@ import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import FormControl from "@material-ui/core/FormControl";
+
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -40,6 +46,7 @@ export default function Form() {
     address: "",
     PanNumber: "",
     Amount: "",
+    country: "India",
   });
 
   const handleChange = (event) => {
@@ -67,155 +74,190 @@ export default function Form() {
       });
   };
 
+  let FORM = (
+    <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
+      <Grid container spacing={4}>
+        <Grid item xs={12} md={6}>
+          <TextField
+            autoComplete="fname"
+            name="FullName"
+            variant="outlined"
+            requiredmd={6}
+            fullWidth
+            id="FullName"
+            label="Full Name"
+            autoFocus
+            defaultValue={userDetails.FullName}
+            onChange={handleChange}
+            inputRef={register({ required: true, maxLength: 80 })}
+          />
+          <div style={{ color: "red" }}>
+            {errors.FullName && <p>This field is required</p>}
+          </div>
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <TextField
+            variant="outlined"
+            required
+            fullWidth
+            id="EmailAddress"
+            label="Email Address"
+            name="Email"
+            autoComplete="lname"
+            defaultValue={userDetails.FullName}
+            onChange={handleChange}
+            inputRef={register({
+              required: true,
+              pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/i,
+            })}
+          />
+          <div style={{ color: "red" }}>
+            {errors.Email && "Invalid email address"}
+          </div>
+        </Grid>
+        <Grid item xs={12} md={6} lg={6}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            // pattern="^\d{4}-\d{3}-\d{4}$"
+            required
+            name="Phone"
+            label="Phone Number"
+            type="number"
+            autoComplete="phoneNumber"
+            defaultValue={userDetails.FullName}
+            onChange={handleChange}
+            // inputRef={register({ trnsformValue: (value) => parseFloat(value)})}
+            inputRef={register({ valueAsNumber: true, required: true })}
+          />
+          <div style={{ color: "red" }}>
+            {errors.Phone && <p>Character should be Number</p>}
+          </div>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="address"
+            label="Address"
+            type="address"
+            autoComplete="address"
+            defaultValue={userDetails.address}
+            onChange={handleChange}
+            inputRef={register({ required: true, maxLength: 80 })}
+          />
+          <div style={{ color: "red" }}>
+            {errors.address && <p>This field is required</p>}
+          </div>
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <TextField
+            autoComplete="fname"
+            name="PanNumber"
+            variant="outlined"
+            required
+            fullWidth
+            id="PanNumber"
+            label="Pan Number"
+            autoFocus
+            defaultValue={userDetails.PanNumber}
+            onChange={handleChange}
+            type="text"
+            inputRef={register({
+              required: true,
+              minLength: 6,
+              maxLength: 10,
+              pattern: /[A-Z]{5}[0-9]{4}[A-Z]{1}/g,
+            })}
+          />
+          <div style={{ color: "red" }}>
+            {errors.PanNumber && <p>Incorrect PAN Details</p>}
+          </div>
+        </Grid>
+
+        <Grid item xs={12} md={6} lg={6}>
+          <TextField
+            autoComplete="fname"
+            name="Amount"
+            variant="outlined"
+            required
+            fullWidth
+            id="Amount"
+            label="Amount"
+            defaultValue={userDetails.Amount}
+            onChange={handleChange}
+            type="number"
+            inputRef={register({
+              required: true,
+              minLength: 1,
+              maxLength: 12,
+            })}
+          />
+
+          <div style={{ color: "red" }}>
+            {errors.Amount && <p>Character should be amount number</p>}
+          </div>
+        </Grid>
+      </Grid>
+      <Button
+        type="submit"
+        fullWidth
+        variant="contained"
+        color="primary"
+        className={classes.submit}
+      >
+        DONATE WITH AMAZON PAY
+      </Button>
+    </form>
+  );
+  if (userDetails.country !== "India")
+    FORM = (
+      <div style={{ padding: "15px" }}>
+        <Typography>
+          Sorry! We currently do not accept donations outside India
+        </Typography>
+      </div>
+    );
   return (
     <Container style={{ marginTop: "3%" }} component="main" maxWidth="md">
       <CssBaseline />
       <div className={classes.paper}>
-        <form
-          className={classes.form}
-          noValidate
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <TextField
-                autoComplete="fname"
-                name="FullName"
-                variant="outlined"
-                requiredmd={6}
-                fullWidth
-                id="FullName"
-                label="Full Name"
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={12} lg={12}>
+            <FormControl variant="outlined">
+              <InputLabel>Country</InputLabel>
+              <Select
+                autoComplete="country"
+                id="country"
                 autoFocus
-                defaultValue={userDetails.FullName}
+                name="country"
+                variant="outlined"
+                style={{ width: "100%" }}
+                label="Select Country"
+                defaultValue={userDetails.country}
                 onChange={handleChange}
-                inputRef={register({ required: true, maxLength: 80 })}
-              />
-              <div style={{ color: "red" }}>
-                {errors.FullName && <p>This field is required</p>}
-              </div>
-            </Grid>
+                inputRef={register({ required: true })}
+              >
+                <MenuItem value="" disabled>
+                  Select Country
+                </MenuItem>
+                <MenuItem value="India">India</MenuItem>
+                <MenuItem value="Other">Other</MenuItem>
+              </Select>
+            </FormControl>
 
-            <Grid item xs={12} md={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="EmailAddress"
-                label="Email Address"
-                name="Email"
-                autoComplete="lname"
-                defaultValue={userDetails.FullName}
-                onChange={handleChange}
-                inputRef={register({
-                  required: true,
-                  pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/i,
-                })}
-              />
-              <div style={{ color: "red" }}>
-                {errors.Email && "Invalid email address"}
-              </div>
-            </Grid>
-            <Grid item xs={12} md={6} lg={6}>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                // pattern="^\d{4}-\d{3}-\d{4}$"
-                required
-                name="Phone"
-                label="Phone Number"
-                type="number"
-                autoComplete="phoneNumber"
-                defaultValue={userDetails.FullName}
-                onChange={handleChange}
-                // inputRef={register({ trnsformValue: (value) => parseFloat(value)})}
-                inputRef={register({ valueAsNumber: true, required: true })}
-              />
-              <div style={{ color: "red" }}>
-                {errors.Phone && <p>Character should be Number</p>}
-              </div>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="address"
-                label="Address"
-                type="address"
-                autoComplete="address"
-                defaultValue={userDetails.address}
-                onChange={handleChange}
-                inputRef={register({ required: true, maxLength: 80 })}
-              />
-              <div style={{ color: "red" }}>
-                {errors.address && <p>This field is required</p>}
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <TextField
-                autoComplete="fname"
-                name="PanNumber"
-                variant="outlined"
-                required
-                fullWidth
-                id="PanNumber"
-                label="Pan Number"
-                autoFocus
-                defaultValue={userDetails.PanNumber}
-                onChange={handleChange}
-                type="text"
-                inputRef={register({
-                  required: true,
-                  minLength: 6,
-                  maxLength: 10,
-                  pattern: /[A-Z]{5}[0-9]{4}[A-Z]{1}/g,
-                })}
-              />
-              <div style={{ color: "red" }}>
-                {errors.PanNumber && <p>Incorrect PAN Details</p>}
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={6} lg={6}>
-              <TextField
-                autoComplete="fname"
-                name="Amount"
-                variant="outlined"
-                required
-                fullWidth
-                id="Amount"
-                label="Amount"
-                autoFocus
-                defaultValue={userDetails.Amount}
-                onChange={handleChange}
-                type="number"
-                inputRef={register({
-                  required: true,
-                  minLength: 1,
-                  maxLength: 12,
-                })}
-              />
-
-              <div style={{ color: "red" }}>
-                {errors.Amount && <p>Character should be amount number</p>}
-              </div>
-            </Grid>
+            <div style={{ color: "red" }}>
+              {errors.FullName && <p>This field is required</p>}
+            </div>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            DONATE WITH AMAZON PAY
-          </Button>
-        </form>
+        </Grid>
+        {FORM}
       </div>
     </Container>
   );

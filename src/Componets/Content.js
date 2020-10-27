@@ -28,10 +28,10 @@ export default function Text() {
             <Typography component="h4" variant="h4" className="Heading">
               {Config.TEXTHEAD}
             </Typography>
-            <Typography component="p" variant="p" className="text1">
+            <Typography component="p" variant="body1" className="text1">
               {Config.TEXT1}
             </Typography>
-            <Typography component="p" variant="p" className="text2">
+            <Typography component="p" variant="body1" className="text2">
               {Config.TEXT2}
             </Typography>
           </Container>
