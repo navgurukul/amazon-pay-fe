@@ -79,33 +79,20 @@ export default function Form() {
   let COUNTRY_FIELD = (
     <Grid container spacing={4}>
       <Grid item xs={12} md={12} lg={12}>
-        <FormControl
+        <TextField
+          name="country"
           variant="outlined"
-          style={{ width: "100%", textAlign: "left" }}
-        >
-          <InputLabel>Country</InputLabel>
-          <Select
-            autoComplete="country"
-            id="country"
-            autoFocus
-            name="country"
-            variant="outlined"
-            fullWidth
-            label="Country"
-            defaultValue={userDetails.country}
-            onChange={handleChange}
-            inputRef={register({ required: true })}
-          >
-            <MenuItem value="" disabled>
-              Select Country
-            </MenuItem>
-            <MenuItem value="India">India</MenuItem>
-            <MenuItem value="Other">Other</MenuItem>
-          </Select>
-        </FormControl>
-
+          requiredmd={6}
+          fullWidth
+          id="country"
+          label="Country"
+          autoFocus
+          defaultValue={userDetails.country}
+          onChange={handleChange}
+          inputRef={register({ required: true })}
+        />
         <div style={{ color: "red" }}>
-          {errors.FullName && <p>This field is required</p>}
+          {errors.country && <p>This field is required</p>}
         </div>
       </Grid>
     </Grid>
@@ -255,7 +242,7 @@ export default function Form() {
       </Button>
     </form>
   );
-  if (userDetails.country !== "India")
+  if (userDetails.country.toLowerCase() !== "india")
     FORM = (
       <div style={{ padding: "15px" }}>
         <Typography>
