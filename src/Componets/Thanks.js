@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
-import Success from "./succuss.jpeg";
+import Success from "./succuss.png";
 
 export default function Thanks() {
   return (
