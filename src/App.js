@@ -18,7 +18,7 @@ function App() {
         .get(`/api/verifySignature?${URLParams}`)
         .then((res) => {
           console.log(res.data);
-          setIsSuccess(true);
+          setIsSuccess(res.data);
         })
         .catch((err) => {
           console.log(err);
