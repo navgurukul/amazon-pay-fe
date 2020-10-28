@@ -6,9 +6,11 @@ import Content from "./Componets/Content";
 import Form from "./Componets/Form";
 import Footer from "./Componets/Footer";
 import Thanks from "./Componets/Thanks";
+// import Failure from "./Componets/Failure";
 
 function App() {
   const [isSuccess, setIsSuccess] = useState(false);
+  // const [isFailed, setIsFailed] = useState(false);
 
   useEffect(() => {
     const currentURL = window.location.href;
@@ -24,6 +26,9 @@ function App() {
           console.log(err);
         });
     }
+    // else if (currentURL.includes("FAILURE")) {
+    //   setIsFailed(true);
+    // }
   });
 
   let toDisplay = (
@@ -35,6 +40,16 @@ function App() {
   if (isSuccess) {
     toDisplay = <Thanks />;
   }
+
+  // if (isFailed === true) {
+  //   toDisplay = (
+  //     <React.Fragment>
+  //       <Content />
+  //       <Failure />
+  //       <Form />
+  //     </React.Fragment>
+  //   );
+  // }
 
   return (
     <div className="App">
