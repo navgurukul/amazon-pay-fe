@@ -1,53 +1,48 @@
 import React, { useEffect } from "react";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Slide from "@material-ui/core/Slide";
+import { Typography } from "@material-ui/core";
+import config from "../Config/config";
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
-
-function Failure() {
-  const [open, setOpen] = React.useState(false);
-
-  useEffect(() => {
-    setOpen(true);
-  }, []);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+function Failure(props) {
+  config.NAME = "Peepul";
+  let email = "hi@navgurukul.org.";
+  if (config.NAME === "Peepul") {
+    email = "info@peepulindia.org";
+  }
+  let MESSAGE = `Your transaction didn't go through.`;
+  let referenceMessage = `Your reference id is : ${props.refId} `;
+  let MESSAGE1 = `You can try again or contact the admins at ${email}`;
 
   return (
-    <div>
-      <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-slide-title"
-        aria-describedby="alert-dialog-slide-description"
-      >
-        <DialogTitle id="alert-dialog-slide-title">
-          {"Payment Failed"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            Payment failed due to some reason, please try again.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="secondary">
-            Ok
-          </Button>
-        </DialogActions>
-      </Dialog>
+    <div style={{ marginTop: 100, marginRight: 20, marginLeft: 20 }}>
+      <Typography variant="h4" component="h4">
+        {MESSAGE}
+      </Typography>
+      <br />
+      <br />
+      {referenceMessage}
+      <br />
+      <br />
+      {MESSAGE1}
+      <br />
+      <br />
+      <a href="/">Try Again</a>
     </div>
   );
 }
 
 export default Failure;
+
+/* Your transaction didn't go through. 
+
+Your order Id is : 20201028103518457.
+
+You can try again or contact the admins at hi@navgurukul.org.
+
+<a href="/">Try Again</a>
+Your transaction didn't go through. 
+
+Your order Id is : 20201028103518457.
+
+Your transaction didn't go through. You can try again or contact the admins at finance@peepulindia.org.
+
+<a href="/">Try Again</a> */
