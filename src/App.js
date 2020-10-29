@@ -49,7 +49,7 @@ function App() {
     toDisplay = <Thanks refId={referenceId} />;
   }
 
-  if (screenType === "txnFailure" ) {
+  if (screenType === "txnFailure") {
     toDisplay = <Failure refId={referenceId} />;
   }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography } from "@material-ui/core";
-import {NAME} from "../UIComponents";
+import { NAME } from "../UIComponents";
 import Success from "../assets/success.png";
 
 function Thanks(props) {
@@ -15,7 +15,7 @@ function Thanks(props) {
     MESSAGE2 = `Please note: Donations to Peepul (regd. as Absolute Return for Kids), qualify for deduction u/s 80G(5) of Income Tax Act 1961 vide order NQ.DIT (E) 2011-2012/ DEL - AE23043-25082011/1063 dated August 25, 2011.`;
     MESSAGE3 = `We will be sharing an 80G receipt to you within 3 weeks of this transaction. For more information, please write to us at info@peepulindia.org.`;
   }
-  
+
   return (
     <div style={{ marginTop: 100, marginRight: 20, marginLeft: 20 }}>
       <img src={Success} alt="Logo" />;
