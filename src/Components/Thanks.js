@@ -18,7 +18,7 @@ function Thanks(props) {
 
   return (
     <div style={{ marginTop: 100, marginRight: 20, marginLeft: 20 }}>
-      <img src={Success} alt="Logo" />;
+      <img src={Success} alt="Logo" />
       <Typography variant="h4" component="h4">
         {MESSAGE}
       </Typography>
