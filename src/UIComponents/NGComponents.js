@@ -19,9 +19,9 @@ function TEXTHEAD() {
       className="Heading"
       className="text-align-center"
     >
-      Help Girls from Low-income Communities
+      Help Girls from rural India
       <br />
-      to become Software Engineer.
+      to learn Coding.
     </Typography>
   );
 }
@@ -70,7 +70,7 @@ function MAIN_CONTENT() {
           Donate now towards future of 600+ girls like Kajal enroled in our
           residential courses now.
         </Typography>
-        <Typography component="p" variant="body1" className="text2">
+        <Typography component="p" variant="body1" className="text2" style={{margin: 16, marginTop: 0}}>
           <b>Note</b>: Only Indian Citizens making payments through their local
           bank accounts can donate.
         </Typography>
