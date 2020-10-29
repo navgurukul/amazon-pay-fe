@@ -56,7 +56,7 @@ function MAIN_CONTENT() {
         </Grid>
 
         <Typography component="p" variant="body1" className="text1" style={{margin: 16, marginTop: 0}}>
-          One-year fully residential course for students from low-income &amp;
+          {/* One-year fully residential course for students from low-income &amp;
           marginalised communities in Software Engineering enabling them to get
           an aspirational job, have a voice, and be equipped to bring at least
           10 families out of poverty in a financially sustainable model. To know
@@ -64,7 +64,7 @@ function MAIN_CONTENT() {
           <a href="https://navgurukul.org" target="_blank">
             our website
           </a>
-          .
+          . */}
           <br />
           <br />
           We are raising <b>12,50,000 INR</b> to buy low-end smartphones and data packs for the girls from rural India (especially working with women at distress, eg. <b>HIV+, survivor from trafficking</b>, etc.). <b>4000 INR</b> can educate one child and teach them how to code.
