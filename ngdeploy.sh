@@ -4,7 +4,7 @@ git checkout gh-pages
 
 git reset --hard origin/main
 
-cp src/UIComponents/NGComponents.js src/UIComponents.js
+cp src/UIComponents/NGComponents.js src/UIComponents/index.js
 
 npm run build
 
