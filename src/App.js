@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import Header from "./Componets/Header";
-import Content from "./Componets/Content";
-import Form from "./Componets/Form";
-import Footer from "./Componets/Footer";
-import Thanks from "./Componets/Thanks";
-import Failure from "./Componets/Failure";
+import Header from "./Components/Header";
+import Content from "./Components/Content";
+import Form from "./Components/Form";
+import Footer from "./Components/Footer";
+import Thanks from "./Components/Thanks";
+import Failure from "./Components/Failure";
 import { Typography } from "@material-ui/core";
 
 function App() {
