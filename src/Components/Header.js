@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Config from "../Config/config.js";
+import Config from "../UIComponents.js";
 import Container from "@material-ui/core/Container";
 
 export default function Header() {

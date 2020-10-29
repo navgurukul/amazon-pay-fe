@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography } from "@material-ui/core";
-import config from "../Config/config";
+import config from "../UIComponents";
 
 function Failure(props) {
   config.NAME = "Peepul";

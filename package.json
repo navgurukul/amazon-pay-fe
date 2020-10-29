@@ -19,7 +19,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "cp src/Config/navgurukul.js src/Config/config.js && react-scripts start",
+    "start": "cp src/UIComponents/NGComponents.js src/UIComponents/index.js && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

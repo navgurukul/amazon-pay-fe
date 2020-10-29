@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Config from "../Config/config";
+import Config from "../UIComponents";
 
 const useStyles = makeStyles((theme) => ({
   paper: {

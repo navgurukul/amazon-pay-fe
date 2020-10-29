@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography } from "@material-ui/core";
-import Config from "../Config/config";
+import Config from "../UIComponents";
 import Success from "../assets/success.png";
 
 function Thanks(props) {
