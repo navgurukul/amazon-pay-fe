@@ -21,7 +21,7 @@ function TEXTHEAD() {
     >
       Help Girls from rural India
       <br />
-      to learn Coding.
+      to learn Coding. Donate devices.
     </Typography>
   );
 }
