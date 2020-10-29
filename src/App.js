@@ -67,7 +67,7 @@ function App() {
     <div className="App">
       <Header />
       {toDisplay}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
