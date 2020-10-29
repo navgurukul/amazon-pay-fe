@@ -4,6 +4,8 @@ git checkout gh-pages
 
 git reset --hard origin/main
 
+cp public/ng.html public/index.html
+
 cp src/UIComponents/NGComponents.js src/UIComponents/index.js
 
 npm run build

@@ -4,6 +4,8 @@ git checkout gh-pages-pi
 
 git reset --hard origin/main
 
+cp public/pi.html public/index.html
+
 cp src/UIComponents/PIComponents.js src/UIComponents/index.js
 
 npm run build
