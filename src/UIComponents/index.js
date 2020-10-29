@@ -1,56 +1,81 @@
 import React from "react";
-import KajalPic from "../assets/kajal-ahirwal.png";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import DonationImage from "../assets/donation.jpg";
 
-const NAME = "Navgurukul";
-const LOGO = "https://navgurukul.org/assets/img/logo.png";
-const HOME_PAGE = "https://navgurukul.org/";
-const RETURN_URL = "https://donate.navgurukul.org/";
-const BLOG = "https://medium.com/navgurukul";
-
-function TEXTHEAD() {
-  return (
-    <Typography
-      component="h4"
-      variant="h4"
-      className="Heading"
-      className="text-align-center"
-    >
-      Help Girls from Low-income Communities
-      <br />
-      to become Software Engineer.
-    </Typography>
-  );
-}
+const NAME = "Peepul";
+const LOGO = "https://navgurukul.org/assets/img/peepul.png";
+const HOME_PAGE = "https://www.peepulindia.org/";
+const RETURN_URL = "https://donate.peepulschools.org/";
+const BLOG = "https://twitter.com/peepulindia?lang=en";
 
 function MAIN_CONTENT() {
   return (
     <>
-        <Container>
-          <Box display="block" style={{ marginTop: 120 }}></Box>
-          <TEXTHEAD />
-            <Grid item xs={12} style={{ flexDirection: "row", display: "flex", alignItems: "center", marginTop: 20 }}>
-              <img src={KajalPic} alt="Kajal Ahirwal" style={{ height: 96 }} />;
-              <Typography component="p" variant="body1" style={{ margin: 16, marginTop: 0 }}>
-                Kajal an 18 year old girl, a 10th standard student, with less than 6 months of training at Navgurukul - is now working at <b>Mindtree</b> with a 4.2 lacs annual package.  Based out of Delhi, her father is a rickshaw puller and mother a domestic cook in Delhi.
-              </Typography>
-            </Grid>
-
-            <Typography component="p" variant="body1" className="text1">
-              One-year fully residential course for students from low-income & marginalised communities in Software Engineering enabling them to get an aspirational job, have a voice, and be equipped to bring at least 10 families out of poverty in a financially sustainable model. To know more, visit <a href="https://navgurukul.org" target="_blank">our website</a>.
-              <br />
-              <br />
-              Donate now towards future of 600+ girls like Kajal enroled in our residential courses now.
-            </Typography>
-          <Typography component="p" variant="body1" className="text2">
-            <b>Note</b>: Only Indian Citizens making payments through their
-          local bank accounts can donate.
+      <Container>
+        <Box display="block" style={{ marginTop: 120 }}></Box>
+        <Grid container alignItems="center">
+          <Grid item xs={12} md={6} lg={6}>
+            <Container maxWidth="md">
+              <Typography
+                component="h4"
+                variant="h4"
+                className="Heading"
+                className="text-align-center"
+                style={{ fontFamily: "Comfortaa", color: "#0d154a", textAlign: "left"}}
+              >
+                Donate for devices.
+            <br />
+            Make a difference.
           </Typography>
-        </Container>
+
+              <Typography
+                style={{ fontFamily: "Open Sans", fontWeight: 600 }}
+                component="p"
+                variant="body1"
+                className="text1"
+              >
+                For direct donations via Amazon Pay, please use the form below. To donate a device/accessory, please see our{" "}
+                <a
+                  href="https://www.amazon.in/hz/wishlist/ls/25X29BDNI7EQ1?&sort=default"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <u>Amazon Wishlist</u>
+                </a>
+        . To know more about our work, please see our{" "}
+                <a
+                  href="https://www.peepulindia.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <u>website</u>
+                </a>
+        .
+          </Typography>
+              <Typography component="p" variant="body1" className="text2">
+                <b>Note</b>: Only Indian Citizens making payments through their
+              local bank accounts can donate.
+          </Typography>
+            </Container>
+          </Grid>
+          <Grid item xs={12} md={6} lg={6}>
+            <Container maxWidth="md">
+              <DONATIONIMAGE />
+            </Container>
+          </Grid>
+
+        </Grid>
+      </Container>
     </>
+  );
+}
+
+function DONATIONIMAGE() {
+  return (
+    <img style={{ maxHeight: "300px", maxWidth: "94%", marginTop: 16 }} src={DonationImage} alt="Donate"></img>
   );
 }
 
@@ -61,5 +86,5 @@ export {
   RETURN_URL,
   BLOG,
   MAIN_CONTENT,
-  TEXTHEAD
+  DONATIONIMAGE,
 };
