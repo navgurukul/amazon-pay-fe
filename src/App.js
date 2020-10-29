@@ -10,14 +10,11 @@ import Failure from "./Components/Failure";
 import { Typography } from "@material-ui/core";
 
 function App() {
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isFailed, setIsFailed] = useState(false);
+  const [screenType, setScreenType] = useState(false);
   const [referenceId, setReferenceId] = useState("");
-  const [signatureFailed, setSignatureFailed] = useState(false);
 
   useEffect(() => {
     const currentURL = window.location.href;
-    console.log(currentURL);
     if (currentURL.includes("status")) {
       const URLParams = currentURL.split("?")[1];
       axios
@@ -27,18 +24,16 @@ function App() {
           if (res.data) {
             setReferenceId(currentURL.split("sellerOrderId=")[1].split("&")[0]);
             if (currentURL.includes("SUCCESS")) {
-              setIsSuccess(res.data);
-              console.log(isSuccess);
+              setScreenType("txnSuccess");
             } else {
-              setIsFailed(res.data);
+              setScreenType("txnFailure");
             }
           } else {
-            setSignatureFailed(true);
+            setScreenType("signatureFailure");
           }
         })
         .catch((err) => {
-          console.log(err);
-          setSignatureFailed(true);
+          setScreenType("signatureFailure");
         });
     }
   });
@@ -49,15 +44,16 @@ function App() {
       <Form />
     </React.Fragment>
   );
-  if (isSuccess) {
+
+  if (screenType === "txnSuccess") {
     toDisplay = <Thanks refId={referenceId} />;
   }
 
-  if (isFailed === true) {
+  if (screenType === "txnFailure" ) {
     toDisplay = <Failure refId={referenceId} />;
   }
 
-  if (signatureFailed) {
+  if (screenType === "signatureFailure") {
     toDisplay = (
       <div style={{ marginTop: 100, marginRight: 20, marginLeft: 20 }}>
         <Typography variant="h4" component="h4">

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Typography } from "@material-ui/core";
 import Config from "../Config/config";
-import Success from "./success.png";
+import Success from "../assets/success.png";
 
 function Thanks(props) {
   let MESSAGE = `Thank you for your donation! `;
