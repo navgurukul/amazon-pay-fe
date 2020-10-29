@@ -1,5 +1,7 @@
-import { Typography } from "@material-ui/core";
 import React from "react";
+import { Typography } from "@material-ui/core";
+
+import DonationImage from "../assets/donation.jpg";
 
 const NAME = "Peepul";
 const LOGO = "https://navgurukul.org/assets/img/peepul.png";
@@ -14,6 +16,7 @@ function TEXTHEAD() {
       variant="h4"
       className="Heading"
       className="text-align-center"
+      style={{ fontFamily: "Comfortaa", color: "#0d154a" }}
     >
       Donate for devices.
       <br />
@@ -25,21 +28,48 @@ function TEXTHEAD() {
 function MAIN_CONTENT() {
   return (
     <>
-      <Typography component="p" variant="body1" className="text1">
-        Towards this, we closely partner with national, state, and local
-        governments to design and implement high-quality, scalable solutions that
-        create these high-performing teachers, through a combination of training,
-        coaching and performance management.
-      </Typography>
-      <Typography component="p" variant="body1" className="text1">
-        At Peepul, we look to improve learning outcomes in the public education
-        system, by enabling ‘meaningful teacher-student interaction’. If a child
-        is meaningfully and effectively engaged in the classroom by the teacher,
-        she attends classes regularly, engages in learning, and in turn, achieves
-        learning.
+      <Typography
+        style={{ fontFamily: "Open Sans", fontWeight: 600 }}
+        component="p"
+        variant="body1"
+        className="text1"
+      >
+        For direct donations via Amazon Pay, please use the form below. To
+        donate a device/accessory, please see our{" "}
+        <a
+          href="https://www.amazon.in/hz/wishlist/ls/25X29BDNI7EQ1?&sort=default"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <u>Amazon Wishlist</u>
+        </a>
+        . To know more about our work, please see our{" "}
+        <a
+          href="https://www.peepulindia.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <u>website</u>
+        </a>
+        .
       </Typography>
     </>
   );
 }
 
-export { NAME, LOGO, HOME_PAGE, RETURN_URL, BLOG, MAIN_CONTENT, TEXTHEAD };
+function DONATIONIMAGE() {
+  return (
+    <img style={{ height: "300px" }} src={DonationImage} alt="Donate"></img>
+  );
+}
+
+export {
+  NAME,
+  LOGO,
+  HOME_PAGE,
+  RETURN_URL,
+  BLOG,
+  MAIN_CONTENT,
+  TEXTHEAD,
+  DONATIONIMAGE,
+};

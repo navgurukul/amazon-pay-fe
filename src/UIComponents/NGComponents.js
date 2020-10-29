@@ -1,6 +1,6 @@
 import { Typography } from "@material-ui/core";
 import React from "react";
-import KajalPic from "../assets/kajal-ahirwal.png";
+import DonationImage from "../assets/kajal-ahirwal.png";
 
 const NAME = "Navgurukul";
 const LOGO = "https://navgurukul.org/assets/img/logo.png";
@@ -26,15 +26,31 @@ function TEXTHEAD() {
 function MAIN_CONTENT() {
   return (
     <>
-      <img src={KajalPic} alt="Kajal Ahirwal" />;
       <Typography component="p" variant="body1" className="text1">
-        More than 100+ students have been placed into various MNCs and startups as Software Programmers.
+        More than 100+ students have been placed into various MNCs and startups
+        as Software Programmers.
       </Typography>
       <Typography component="p" variant="body1" className="text1">
-        You can donate heartily to this campaign to support employment of girls from marginalised areas across the country.
+        You can donate heartily to this campaign to support employment of girls
+        from marginalised areas across the country.
       </Typography>
     </>
   );
 }
 
-export { NAME, LOGO, HOME_PAGE, RETURN_URL, BLOG, MAIN_CONTENT, TEXTHEAD };
+function DONATIONIMAGE() {
+  return (
+    <img style={{ height: "300px" }} src={DonationImage} alt="Donate"></img>
+  );
+}
+
+export {
+  NAME,
+  LOGO,
+  HOME_PAGE,
+  RETURN_URL,
+  BLOG,
+  MAIN_CONTENT,
+  TEXTHEAD,
+  DONATIONIMAGE,
+};

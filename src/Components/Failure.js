@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import {NAME} from "../UIComponents";
+import { NAME } from "../UIComponents";
 
 function Failure(props) {
   NAME = "Peepul";

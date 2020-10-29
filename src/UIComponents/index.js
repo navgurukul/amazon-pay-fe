@@ -1,13 +1,18 @@
-import { Typography } from "@material-ui/core";
 import React from "react";
+<<<<<<< HEAD
 import Grid from "@material-ui/core/Grid";
 import KajalPic from "../assets/kajal-ahirwal.png";
+=======
+import { Typography } from "@material-ui/core";
+>>>>>>> fe4c3edd249f88a3523888787a4122783ab3715d
 
-const NAME = "Navgurukul";
-const LOGO = "https://navgurukul.org/assets/img/logo.png";
-const HOME_PAGE = "https://navgurukul.org/";
-const RETURN_URL = "https://donate.navgurukul.org/";
-const BLOG = "https://medium.com/navgurukul";
+import DonationImage from "../assets/donation.jpg";
+
+const NAME = "Peepul";
+const LOGO = "https://navgurukul.org/assets/img/peepul.png";
+const HOME_PAGE = "https://www.peepulindia.org/";
+const RETURN_URL = "https://donate.peepulschools.org/";
+const BLOG = "https://twitter.com/peepulindia?lang=en";
 
 function TEXTHEAD() {
   return (
@@ -16,10 +21,11 @@ function TEXTHEAD() {
       variant="h4"
       className="Heading"
       className="text-align-center"
+      style={{ fontFamily: "Comfortaa", color: "#0d154a" }}
     >
-      Help Girls from Low-income Communities
+      Donate for devices.
       <br />
-      to become Software Engineer.
+      Make a difference.
     </Typography>
   );
 }
@@ -27,6 +33,7 @@ function TEXTHEAD() {
 function MAIN_CONTENT() {
   return (
     <>
+<<<<<<< HEAD
       <Grid item xs={12} style={{ marginTop: "8%" }}>
         <Grid item xs={12} style={{flexDirection: "row", display: "flex", alignItems: "center"}}>
           <img src={KajalPic} alt="Kajal Ahirwal" style={{height:96}}/>;
@@ -42,8 +49,50 @@ function MAIN_CONTENT() {
           Donate now towards future of 600+ girls like Kajal enroled in our residential courses now.
         </Typography>
       </Grid>
+=======
+      <Typography
+        style={{ fontFamily: "Open Sans", fontWeight: 600 }}
+        component="p"
+        variant="body1"
+        className="text1"
+      >
+        For direct donations via Amazon Pay, please use the form below. To
+        donate a device/accessory, please see our{" "}
+        <a
+          href="https://www.amazon.in/hz/wishlist/ls/25X29BDNI7EQ1?&sort=default"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <u>Amazon Wishlist</u>
+        </a>
+        . To know more about our work, please see our{" "}
+        <a
+          href="https://www.peepulindia.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <u>website</u>
+        </a>
+        .
+      </Typography>
+>>>>>>> fe4c3edd249f88a3523888787a4122783ab3715d
     </>
   );
 }
 
-export { NAME, LOGO, HOME_PAGE, RETURN_URL, BLOG, MAIN_CONTENT, TEXTHEAD };
+function DONATIONIMAGE() {
+  return (
+    <img style={{ height: "300px" }} src={DonationImage} alt="Donate"></img>
+  );
+}
+
+export {
+  NAME,
+  LOGO,
+  HOME_PAGE,
+  RETURN_URL,
+  BLOG,
+  MAIN_CONTENT,
+  TEXTHEAD,
+  DONATIONIMAGE,
+};
