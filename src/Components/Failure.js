@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import {NAME} from "../UIComponents";
+import { NAME } from "../UIComponents";
 
 function Failure(props) {
   NAME = "Peepul";
@@ -31,18 +31,3 @@ function Failure(props) {
 }
 
 export default Failure;
-
-/* Your transaction didn't go through. 
-
-Your order Id is : 20201028103518457.
-
-You can try again or contact the admins at hi@navgurukul.org.
-
-<a href="/">Try Again</a>
-Your transaction didn't go through. 
-
-Your order Id is : 20201028103518457.
-
-Your transaction didn't go through. You can try again or contact the admins at finance@peepulindia.org.
-
-<a href="/">Try Again</a> */
