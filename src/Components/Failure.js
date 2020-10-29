@@ -3,7 +3,7 @@ import { Typography } from "@material-ui/core";
 import { NAME } from "../UIComponents";
 
 function Failure(props) {
-  NAME = "Peepul";
+  console.log(NAME);
   let email = "hi@navgurukul.org.";
   if (NAME === "Peepul") {
     email = "info@peepulindia.org";

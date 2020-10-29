@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import {NAME} from "../UIComponents";
+import { NAME } from "../UIComponents";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
