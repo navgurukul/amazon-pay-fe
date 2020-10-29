@@ -41,6 +41,11 @@ function MAIN_CONTENT() {
                 variant="body1"
                 className="text1"
               >
+                Thank you for your support! We support 1000 children from
+                Delhi’s poorest communities, and your support will help them
+                attend classes, engage in learning and achieve.
+                <br />
+                <br />
                 For direct donations via Amazon Pay, please use the form below.
                 To donate a device/accessory, please see our{" "}
                 <a
