@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Config from "../UIComponents/index";
+import {NAME} from "../UIComponents";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -98,7 +98,7 @@ export default function Form() {
     </Grid>
   );
 
-  if (Config.NAME === "Peepul") {
+  if (NAME === "Peepul") {
     COUNTRY_FIELD = null;
   }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography } from "@material-ui/core";
-import {NAME} from "../UIComponents/index";
+import {NAME} from "../UIComponents";
 
 function Failure(props) {
   NAME = "Peepul";

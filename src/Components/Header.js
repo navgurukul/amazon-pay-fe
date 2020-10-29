@@ -29,17 +29,6 @@ export default function Header() {
                   <a href="#">
                     <Button color="inherit">Home</Button>
                   </a>
-                  <a href={Config.HOME_PAGE}>
-                    {" "}
-                    <Button color="inherit">About Us</Button>
-                  </a>
-                  <a href={Config.BLOG}>
-                    {" "}
-                    <Button color="inherit">BLOG</Button>
-                  </a>
-                  <a href="#">
-                    <Button color="inherit">Contact Us</Button>
-                  </a>
                 </div>
               </Grid> */}
             </Grid>

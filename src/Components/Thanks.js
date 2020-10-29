@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography } from "@material-ui/core";
-import Config from "../UIComponents/index";
+import {NAME} from "../UIComponents";
 import Success from "../assets/success.png";
 
 function Thanks(props) {
@@ -10,7 +10,7 @@ function Thanks(props) {
   let MESSAGE3 = `For more information, you can write to us at hi@navgurukul.org.`;
   let referenceMessage = `Your transaction reference Id is ${props.refId} `;
 
-  if (Config.NAME === "Peepul") {
+  if (NAME === "Peepul") {
     MESSSAGE1 = `All of us at Peepul (regd. as Absolute Return for Kids), greatly appreciate your donation. It is wonderful to find a champion for the cause in you, who our dream of enabling and supporting every child in India to achieve their potential.`;
     MESSAGE2 = `Please note: Donations to Peepul (regd. as Absolute Return for Kids), qualify for deduction u/s 80G(5) of Income Tax Act 1961 vide order NQ.DIT (E) 2011-2012/ DEL - AE23043-25082011/1063 dated August 25, 2011.`;
     MESSAGE3 = `We will be sharing an 80G receipt to you within 3 weeks of this transaction. For more information, please write to us at info@peepulindia.org.`;
