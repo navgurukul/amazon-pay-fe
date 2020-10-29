@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import Config from "../UIComponents.js";
+import {RETURN_URL, LOGO} from "../UIComponents";
 import Container from "@material-ui/core/Container";
 
 export default function Header() {
@@ -14,10 +14,10 @@ export default function Header() {
           <Toolbar>
             <Grid justify="space-between" container>
               <Grid item>
-                <a href={Config.RETURN_URL}>
+                <a href={RETURN_URL}>
                   <Button color="inherit">
                     <img
-                      src={Config.LOGO}
+                      src={LOGO}
                       alt="Logo"
                       style={{ height: "40px" }}
                     />

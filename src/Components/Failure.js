@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { Typography } from "@material-ui/core";
-import config from "../UIComponents";
+import {NAME} from "../UIComponents/index";
 
 function Failure(props) {
-  config.NAME = "Peepul";
+  NAME = "Peepul";
   let email = "hi@navgurukul.org.";
-  if (config.NAME === "Peepul") {
+  if (NAME === "Peepul") {
     email = "info@peepulindia.org";
   }
   let MESSAGE = `Your transaction didn't go through.`;
