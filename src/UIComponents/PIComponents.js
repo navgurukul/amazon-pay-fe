@@ -22,27 +22,24 @@ function TEXTHEAD() {
   );
 }
 
-function TEXT1() {
+function MAIN_CONTENT() {
   return (
-    <Typography component="p" variant="body1" className="text1">
-      At Peepul, we look to improve learning outcomes in the public education
-      system, by enabling ‘meaningful teacher-student interaction’. If a child
-      is meaningfully and effectively engaged in the classroom by the teacher,
-      she attends classes regularly, engages in learning, and in turn, achieves
-      learning.
-    </Typography>
+    <>
+      <Typography component="p" variant="body1" className="text1">
+        Towards this, we closely partner with national, state, and local
+        governments to design and implement high-quality, scalable solutions that
+        create these high-performing teachers, through a combination of training,
+        coaching and performance management.
+      </Typography>
+      <Typography component="p" variant="body1" className="text1">
+        At Peepul, we look to improve learning outcomes in the public education
+        system, by enabling ‘meaningful teacher-student interaction’. If a child
+        is meaningfully and effectively engaged in the classroom by the teacher,
+        she attends classes regularly, engages in learning, and in turn, achieves
+        learning.
+      </Typography>
+    </>
   );
 }
 
-function TEXT2() {
-  return (
-    <Typography component="p" variant="body1" className="text1">
-      Towards this, we closely partner with national, state, and local
-      governments to design and implement high-quality, scalable solutions that
-      create these high-performing teachers, through a combination of training,
-      coaching and performance management.
-    </Typography>
-  );
-}
-
-export { NAME, LOGO, HOME_PAGE, RETURN_URL, BLOG, TEXT1, TEXT2, TEXTHEAD };
+export { NAME, LOGO, HOME_PAGE, RETURN_URL, BLOG, MAIN_CONTENT, TEXTHEAD };
