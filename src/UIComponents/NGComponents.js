@@ -42,7 +42,7 @@ function MAIN_CONTENT() {
             marginTop: 20,
           }}
         >
-          <img src={KajalPic} alt="Kajal Ahirwal" style={{ height: 96 }} />;
+          <img src={KajalPic} alt="Kajal Ahirwal" style={{ height: 96 }} />
           <Typography
             component="p"
             variant="body1"
@@ -55,7 +55,12 @@ function MAIN_CONTENT() {
           </Typography>
         </Grid>
 
-        <Typography component="p" variant="body1" className="text1" style={{margin: 16, marginTop: 0}}>
+        <Typography
+          component="p"
+          variant="body1"
+          className="text1"
+          style={{ margin: 16, marginTop: 0 }}
+        >
           {/* One-year fully residential course for students from low-income &amp;
           marginalised communities in Software Engineering enabling them to get
           an aspirational job, have a voice, and be equipped to bring at least
@@ -65,9 +70,22 @@ function MAIN_CONTENT() {
             our website
           </a>
           . */}
-          We are raising <b>12,50,000 INR</b> to buy low-end smartphones and data packs for the girls from rural India (especially working with women at distress, eg. <b>HIV+, survivor from trafficking</b>, etc.). <b>4000 INR</b> can educate one child and teach them how to code. To know more details you can visit our <a href="https://navgurukul.org" target="_blank">website</a>.
+          We are raising <b>12,50,000 INR</b> to buy low-end smartphones and
+          data packs for the girls from rural India (especially working with
+          women at distress, eg. <b>HIV+, survivor from trafficking</b>, etc.).{" "}
+          <b>4000 INR</b> can educate one child and teach them how to code. To
+          know more details you can visit our{" "}
+          <a href="https://navgurukul.org" target="_blank">
+            website
+          </a>
+          .
         </Typography>
-        <Typography component="p" variant="body1" className="text2" style={{margin: 16, marginTop: 0}}>
+        <Typography
+          component="p"
+          variant="body1"
+          className="text2"
+          style={{ margin: 16, marginTop: 0 }}
+        >
           <b>Note</b>: Only Indian Citizens making payments through their local
           bank accounts can donate.
         </Typography>
