@@ -16,7 +16,7 @@ function TEXTHEAD() {
       variant="h4"
       className="Heading"
       className="text-align-center"
-      style={{ fontFamily: "Comfortaa", color: "#262671", textAlign: "left" }}
+      style={{ fontFamily: "Comfortaa", color: "#0d154a" }}
     >
       Donate for devices.
       <br />
