@@ -65,9 +65,7 @@ function MAIN_CONTENT() {
             our website
           </a>
           . */}
-          <br />
-          <br />
-          We are raising <b>12,50,000 INR</b> to buy low-end smartphones and data packs for the girls from rural India (especially working with women at distress, eg. <b>HIV+, survivor from trafficking</b>, etc.). <b>4000 INR</b> can educate one child and teach them how to code.
+          We are raising <b>12,50,000 INR</b> to buy low-end smartphones and data packs for the girls from rural India (especially working with women at distress, eg. <b>HIV+, survivor from trafficking</b>, etc.). <b>4000 INR</b> can educate one child and teach them how to code. To know more details you can visit our <a href="https://navgurukul.org" target="_blank">website</a>.
         </Typography>
         <Typography component="p" variant="body1" className="text2" style={{margin: 16, marginTop: 0}}>
           <b>Note</b>: Only Indian Citizens making payments through their local
