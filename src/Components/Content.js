@@ -21,7 +21,6 @@ export default function Text() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={0} md={1} lg={1} style={{ marginTop: "8%" }}></Grid>
         <MAIN_CONTENT/>
       </Grid>
     </div>

@@ -1,7 +1,8 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-
+import Box from "@material-ui/core/Box";
 import DonationImage from "../assets/donation.jpg";
 
 const NAME = "Peepul";
@@ -13,7 +14,7 @@ const BLOG = "https://twitter.com/peepulindia?lang=en";
 function MAIN_CONTENT() {
   return (
     <>
-      <Grid item xs={6} md={5} lg={5} style={{ marginTop: "8%" }}>
+      <Grid item xs={12} md={6} lg={6} style={{ marginTop: "8%" }}>
         <Container maxWidth="md">
           <Typography
             component="h4"
@@ -58,7 +59,7 @@ function MAIN_CONTENT() {
             </Typography>
         </Container>
       </Grid>
-      <Grid item xs={12} md={5} lg={5} style={{ marginTop: "8%" }}>
+      <Grid item xs={12} md={6} lg={6} style={{ marginTop: "8%" }}>
         <Container maxWidth="md">
           <DONATIONIMAGE />
         </Container>
@@ -80,6 +81,5 @@ export {
   RETURN_URL,
   BLOG,
   MAIN_CONTENT,
-  TEXTHEAD,
   DONATIONIMAGE,
 };

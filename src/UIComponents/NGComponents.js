@@ -30,7 +30,7 @@ function MAIN_CONTENT() {
   return (
     <>
         <Container>
-          <Box display={{xs: "none", lg: "block"}} style={{ marginTop: 108 }}></Box>
+          <Box display="block" style={{ marginTop: 120 }}></Box>
           <TEXTHEAD />
             <Grid item xs={12} style={{ flexDirection: "row", display: "flex", alignItems: "center", marginTop: 20 }}>
               <img src={KajalPic} alt="Kajal Ahirwal" style={{ height: 96 }} />;
