@@ -61,7 +61,7 @@ export default function Form() {
     console.log(userDetails.Amount);
     axios
       .get(
-        `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900&isSandbox=true`
+        `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
       )
       .then((res) => {
         console.log(res.data, "response");
