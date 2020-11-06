@@ -82,7 +82,6 @@ export default function Form() {
           fullWidth
           id="country"
           label="Country"
-          autoFocus
           defaultValue={userDetails.country}
           onChange={handleChange}
           inputRef={register({ required: true })}
@@ -103,6 +102,7 @@ export default function Form() {
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <TextField
+            autoFocus
             autoComplete="fname"
             name="FullName"
             variant="outlined"

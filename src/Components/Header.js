@@ -23,18 +23,30 @@ export default function Header() {
                 </a>
               </Grid>
               <Grid item>
-                <Button disabled color="inherit">
-                  <img src={AMAZON} alt="Amazon" style={{ height: "40px" }} />
-                </Button>
+                <a
+                  href="https://www.amazon.in/l/22380002031"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button disabled color="inherit">
+                    <img src={AMAZON} alt="Amazon" style={{ height: "40px" }} />
+                  </Button>
+                </a>
               </Grid>
               <Grid item>
-                <Button disabled color="inherit">
-                  <img
-                    src={AMAZON_SALE}
-                    alt="Amazon Great Indian Sale"
-                    style={{ height: "40px" }}
-                  />
-                </Button>
+                <a
+                  href="https://www.amazon.in/l/22380002031"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button disabled color="inherit">
+                    <img
+                      src={AMAZON_SALE}
+                      alt="Amazon Great Indian Sale"
+                      style={{ height: "40px" }}
+                    />
+                  </Button>
+                </a>
               </Grid>
 
               {/* <Grid item>
