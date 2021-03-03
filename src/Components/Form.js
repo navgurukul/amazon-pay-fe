@@ -63,7 +63,7 @@ export default function Form() {
     );
     const { FullName, Email, Phone, PanNumber, address, Amount } = userDetails;
     const res = await axios.get(
-      `/api/formEntry?name=${FullName}&email=${Email}&phone=${Phone}&pan=${PanNumber}&address=${address}&amounts=${Amount}&orderId=${sellerOrderId}`
+      `/api/formEntry?name=${FullName}&email=${Email}&phone=${Phone}&pan=${PanNumber}&address=${address}&amount=${Amount}&orderId=${sellerOrderId}`
     );
     console.log(res);
     window.location.assign(response.data);
