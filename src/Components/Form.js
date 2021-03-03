@@ -61,12 +61,12 @@ export default function Form() {
     const response = await axios.get(
       `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
     );
-    window.location.assign(response.data);
     const { FullName, Email, Phone, PanNumber, address, Amount } = userDetails;
     const res = await axios.get(
       `/api/formEntry?name=${FullName}&email=${Email}&phone=${Phone}&pan=${PanNumber}&address=${address}&amounts=${Amount}&orderId=${sellerOrderId}`
     );
     console.log(res);
+    window.location.assign(response.data);
 
     // axios
     //   .get(
