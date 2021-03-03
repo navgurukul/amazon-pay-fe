@@ -50,7 +50,7 @@ export default function Form() {
     setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     let random = new Date().toISOString();
     random = random.replace(/-/g, "");
     random = random.replace(/:/g, "");
@@ -58,18 +58,38 @@ export default function Form() {
     random = random.replace(/[A-Z]/g, "");
     const sellerOrderId = random;
     const INR = "INR";
-    console.log(userDetails.Amount);
-    axios
-      .get(
-        `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
-      )
-      .then((res) => {
-        console.log(res.data, "response");
-        window.location.assign(res.data);
-      })
-      .catch((err) => {
-        console.log(err, "error");
-      });
+    const response = await axios.get(
+      `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
+    );
+    window.location.assign(response.data);
+    const { FullName, Email, Phone, PanNumber, address, Amount } = userDetails;
+    const res = await axios.get(
+      `/api/formEntry?name=${FullName}&email=${Email}&phone=${Phone}&pan=${PanNumber}&address=${address}&amounts=${Amount}&orderId=${sellerOrderId}`
+    );
+    console.log(res);
+
+    // axios
+    //   .get(
+    //     `/api/pay?sellerOrderId=${sellerOrderId}&orderTotalAmount=${userDetails.Amount}&orderTotalCurrencyCode=${INR}&transactionTimeout=900`
+    //   )
+    //   .then(async (res) => {
+    //     window.location.assign(res.data);
+    //     const formPayload = {
+    //       name: userDetails.FullName,
+    //       email: userDetails.Email,
+    //       phone: userDetails.Phone,
+    //       pan: userDetails.PanNumber,
+    //       address: userDetails.address,
+    //       amount: userDetails.Amount,
+    //       orderId: sellerOrderId,
+    //       transactionDate: new Date(),
+    //     };
+    //     const res = await axios.post(`/api/formEntry`, formPayload);
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err, "error");
+    //   });
   };
 
   let COUNTRY_FIELD = (
