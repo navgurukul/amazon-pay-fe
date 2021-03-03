@@ -74,17 +74,6 @@ export default function Form() {
     //   )
     //   .then(async (res) => {
     //     window.location.assign(res.data);
-    //     const formPayload = {
-    //       name: userDetails.FullName,
-    //       email: userDetails.Email,
-    //       phone: userDetails.Phone,
-    //       pan: userDetails.PanNumber,
-    //       address: userDetails.address,
-    //       amount: userDetails.Amount,
-    //       orderId: sellerOrderId,
-    //       transactionDate: new Date(),
-    //     };
-    //     const res = await axios.post(`/api/formEntry`, formPayload);
     //     console.log(res);
     //   })
     //   .catch((err) => {

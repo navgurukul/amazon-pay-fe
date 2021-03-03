@@ -25,6 +25,14 @@ function App() {
             setReferenceId(currentURL.split("sellerOrderId=")[1].split("&")[0]);
             if (currentURL.includes("SUCCESS")) {
               setScreenType("txnSuccess");
+              axios
+                .get(`/api/successTxnEntry?orderId=${referenceId}`)
+                .then((res) => {
+                  console.log(res.data);
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
             } else {
               setScreenType("txnFailure");
             }
