@@ -48,7 +48,7 @@ function MAIN_CONTENT() {
             variant="body1"
             style={{ margin: 16, marginTop: 0 }}
           >
-            Kajal an 18 year old girl, a 10th standard student, with less than 6
+            Komal an 18 year old girl, a 10th standard student, with less than 6
             months of training at Navgurukul - is now working at <b>Mindtree</b>{" "}
             with a 4.2 lacs annual package. Based out of Delhi, her father is a
             rickshaw puller and mother a domestic cook in Delhi.
