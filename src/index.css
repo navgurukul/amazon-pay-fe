@@ -1,3 +1,14 @@
+@media screen and (max-width: 375px) {
+ html, Heading {
+      margin-top: 35px;
+  }
+}
+@media screen and (max-width: 375px){
+html, body {
+  overflow-x: hidden;
+  width:100%;
+}}
+
 .MuiButton-containedPrimary{
   background-color:  #f05f40!important;
 
