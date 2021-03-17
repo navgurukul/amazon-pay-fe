@@ -33,9 +33,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Form() {
   const classes = useStyles();
   const { register, handleSubmit, errors } = useForm();
-
-  // console.log(errors);
-
   const [userDetails, setUserDetails] = useState({
     FullName: "",
     Email: "",
@@ -48,8 +45,7 @@ export default function Form() {
 
   const handleChange = (event) => {
     setUserDetails({ ...userDetails, [event.target.name]: event.target.value });
-  };
-
+  };  
   const onSubmit = async () => {
     let random = new Date().toISOString();
     random = random.replace(/-/g, "");
@@ -65,7 +61,6 @@ export default function Form() {
     const res = await axios.get(
       `/api/formEntry?name=${FullName}&email=${Email}&phone=${Phone}&pan=${PanNumber}&address=${address}&amount=${Amount}&orderId=${sellerOrderId}`
     );
-    console.log(res);
     window.location.assign(response.data);
 
     // axios
@@ -82,22 +77,27 @@ export default function Form() {
   };
 
   let COUNTRY_FIELD = (
-    <Grid container spacing={4}>
-      <Grid item xs={12} md={12} lg={12}>
+    <Grid container  spacing={4}>
+      <Grid item xs={12} md={12} >
         <TextField
-          name="country"
-          variant="outlined"
-          requiredmd={6}
-          fullWidth
-          id="country"
+          select
           label="Country"
+          name="country"
+          fullWidth
+          variant="outlined"
           defaultValue={userDetails.country}
           onChange={handleChange}
-          inputRef={register({ required: true })}
-        />
-        <div style={{ color: "red" }}>
-          {errors.country && <p>This field is required</p>}
-        </div>
+          SelectProps={{
+            native: true,
+          }}
+        >
+          {["India", "Other Country"].map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </TextField>
+        {errors.country && <span style={{ color: "red" }} role="alert">{"This field is required"}</span>}
       </Grid>
     </Grid>
   );
@@ -115,7 +115,6 @@ export default function Form() {
             autoComplete="fname"
             name="FullName"
             variant="outlined"
-            requiredmd={6}
             fullWidth
             id="FullName"
             label="Full Name"
@@ -123,9 +122,7 @@ export default function Form() {
             onChange={handleChange}
             inputRef={register({ required: true, maxLength: 80 })}
           />
-          <div style={{ color: "red" }}>
-            {errors.FullName && <p>This field is required</p>}
-          </div>
+          {errors.FullName && <span style={{ color: "red" }} role="alert">{"This field is required"}</span>}
         </Grid>
 
         <Grid item xs={12} md={6}>
@@ -136,45 +133,40 @@ export default function Form() {
             id="EmailAddress"
             label="Email Address"
             name="Email"
+            type="email"
             autoComplete="lname"
             defaultValue={userDetails.FullName}
             onChange={handleChange}
             inputRef={register({
               required: true,
-              pattern: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/i,
+              pattern: {
+                value: /\S+@\S+\.\S+/
+              }
             })}
           />
-          <div style={{ color: "red" }}>
-            {errors.Email && "Invalid email address"}
-          </div>
+          {errors.Email && <span style={{ color: "red" }} role="alert">{"Invalid email address"}</span>}
         </Grid>
-        <Grid item xs={12} md={6} lg={6}>
+        <Grid item xs={12} md={6}>
           <TextField
-            variant="outlined"
-            margin="normal"
+             variant="outlined"
             required
             fullWidth
-            // pattern="^\d{4}-\d{3}-\d{4}$"
-            required
             name="Phone"
             label="Phone Number"
             type="number"
             autoComplete="phoneNumber"
             defaultValue={userDetails.FullName}
             onChange={handleChange}
-            // inputRef={register({ trnsformValue: (value) => parseFloat(value)})}
             inputRef={register({ valueAsNumber: true, required: true })}
           />
-          <div style={{ color: "red" }}>
-            {errors.Phone && <p>Character should be Number</p>}
-          </div>
+          {errors.Phone && <span style={{ color: "red" }} role="alert">{"Character should be Number"}</span>}
         </Grid>
         <Grid item xs={12} md={6}>
           <TextField
             variant="outlined"
-            margin="normal"
             required
             fullWidth
+            inputProps={{ style: { textTransform: 'capitalize' } }}
             name="address"
             label="Address"
             type="address"
@@ -183,11 +175,8 @@ export default function Form() {
             onChange={handleChange}
             inputRef={register({ required: true, maxLength: 80 })}
           />
-          <div style={{ color: "red" }}>
-            {errors.address && <p>This field is required</p>}
-          </div>
+          {errors.address && <span style={{ color: "red" }} role="alert">{"This field is required"}</span>}
         </Grid>
-
         <Grid item xs={12} md={6}>
           <TextField
             autoComplete="fname"
@@ -197,6 +186,9 @@ export default function Form() {
             fullWidth
             id="PanNumber"
             label="Pan Number"
+            inputProps={{
+              autoCapitalize: 'on',
+            }}
             defaultValue={userDetails.PanNumber}
             onChange={handleChange}
             type="text"
@@ -207,12 +199,9 @@ export default function Form() {
               pattern: /[A-Z]{5}[0-9]{4}[A-Z]{1}/g,
             })}
           />
-          <div style={{ color: "red" }}>
-            {errors.PanNumber && <p>Incorrect PAN Details</p>}
-          </div>
+          {errors.PanNumber && <span style={{ color: "red" }} role="alert">{"Incorrect PAN Details"}</span>}
         </Grid>
-
-        <Grid item xs={12} md={6} lg={6}>
+        <Grid item xs={12} md={6}>
           <TextField
             autoComplete="fname"
             name="Amount"
@@ -230,10 +219,7 @@ export default function Form() {
               maxLength: 12,
             })}
           />
-
-          <div style={{ color: "red" }}>
-            {errors.Amount && <p>Character should be amount number</p>}
-          </div>
+          {errors.Amount && <span style={{ color: "red" }} role="alert">{"Character should be amount number"}</span>}
         </Grid>
       </Grid>
       <Button
@@ -256,7 +242,7 @@ export default function Form() {
       </div>
     );
   return (
-    <Container style={{ marginTop: "3%" }} component="main" maxWidth="md">
+    <Container style={{ marginTop: "3%"}} component="main" maxWidth="sm">
       <CssBaseline />
       <div>
         {COUNTRY_FIELD}

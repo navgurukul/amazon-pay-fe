@@ -3,7 +3,6 @@ import axios from "axios";
 import "./App.css";
 import Header from "./Components/Header";
 import Content from "./Components/Content";
-import Form from "./Components/Form";
 import Footer from "./Components/Footer";
 import Thanks from "./Components/Thanks";
 import Failure from "./Components/Failure";
@@ -48,8 +47,7 @@ function App() {
 
   let toDisplay = (
     <React.Fragment>
-      <Content />
-      <Form />
+        <Content />
     </React.Fragment>
   );
 
